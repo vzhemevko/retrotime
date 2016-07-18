@@ -1,0 +1,64 @@
+<div class='container-fluid' ng-controller="homeController" ng-init="initUserData()">
+    <div class="row">
+        <div class="well">
+            <h3>Hi {{greeting}}</h3>
+        </div>
+        <div class="col-md-12">
+            <div class="fade-in-out" ng-show="isShowNotification">
+                <div ng-show="isShowNotification"
+                     ng-class="isShowError?'alert alert-dismissible alert-danger':'alert alert-dismissible alert-success'">
+                    <button type="button" ng-click="isShowNotification = false" class="close">×</button>
+                    <p>{{notifyText}}</p>
+                </div>
+            </div>
+            <div class="bottom-buffer20">
+                <label for="username">Your login name</label>
+                <input readonly="true" ng-model="currUsername" type="text" id="username" class="form-control"/>
+            </div>
+            <div class="bottom-buffer20">
+                <label for="personalName">Your personal name</label>
+                <input readonly="true" type="text" id="personalName" class="form-control" ng-model='userPersonalName'/>
+            </div>
+
+            <div class="bottom-buffer20">
+                <label for="email">Your email</label>
+                <input readonly="true" type="text" id="email" class="form-control" ng-model='currentEmail'/>
+            </div>
+
+            <!--<div class="bottom-buffer20">
+                <label>Your password <a href="" ng-click="changePasswdMode = !changePasswdMode">change</a></label>
+            </div>
+            <div class="user-edit-slide" ng-show="changePasswdMode">
+                <div class="left-buffer10 bottom-buffer10" >
+                    <label for="old-passwd">old password</label>
+                    <input type="password" id="old-passwd" class="form-control glow-edit" ng-model="oldPasswd"/>
+                </div>
+                <div class="left-buffer10 bottom-buffer10" >
+                    <label for="new-passwd">new password</label>
+                    <input type="password" id="new-passwd" class="form-control glow-edit" ng-model="newPasswd"/>
+                </div>
+                <div class="left-buffer10 bottom-buffer10">
+                    <label for="re-new-passwd">confirm new password</label>
+                    <input type="password" id="re-new-passwd" class="form-control glow-edit" ng-model="reNewPasswd"/>
+                </div>
+                <div class="left-buffer10">
+                    <button class="btn btn-primary" ng-click="changePasswd()">save</button>
+                    <button class="btn btn-default" ng-click="changePasswdMode = !changePasswdMode">cancel</button>
+                </div>
+            </div>-->
+
+        </div>
+        <!--<div class="checkbox" ng-show="isScrumMaster">
+            <label>
+                <input type="checkbox" ng-click="isUserEdit = !isUserEdit"/>
+                Edit
+            </label>
+        </div>-->
+
+        <!-- <image class="img-bordered" ng-src=resources/image/avatar_placeholder.png alt='You' image-resize image-size="150"/> -->
+
+        <!--<button type="button" class="btn btn-warning btn-block">Edit</button>-->
+        <!--<button type="button" class="btn btn-warning btn-block" ng-click="openProfileImgUpload()">Change avatar</button>-->
+        <!--<button type="button" class="btn btn-warning btn-block" ng-click='openEditSMastersList()'>Scrum masters</button>-->
+    </div>
+</div>

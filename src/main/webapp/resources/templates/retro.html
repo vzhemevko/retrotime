@@ -1,0 +1,116 @@
+<nav class="navbar navbar-default navbar-fixed-top ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/home">Retrotime</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="btn btn-default" href="#/home">Go back</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class='container-fluid top-buffer50' ng-controller="retroController" ng-init="init()">
+    <div class="row col-md-offset-1">
+        <div class="row left-buffer30 fade-in-out" ng-show="isShowNotification">
+            <div class="col-md-6">
+                <div ng-class="{'alert alert-dismissible alert-warning' : isShowWarning , 'alert alert-dismissible alert-success' : isShowSuccess, 'alert alert-dismissible alert-danger' : isShowError }">
+                    <button type="button" ng-click="isShowNotification = false" class="close">×</button>
+                    <p>{{notifyText}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            <span><h2>{{retroCont.name}}</h2></span>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            <table class="table table-condensed ">
+                <tr>
+                    <!--<th></th>-->
+                    <th>
+                        <div align="center"><h3>Team member</h3></div>
+                    </th>
+                    <th>
+                        <div align="center"><h3>What went well?</h3></div>
+                    </th>
+                    <th>
+                        <div align="center"><h3>What can we improve?</h3></div>
+                    </th>
+                    <th>
+                        <div align="center"><h3>Kudos</h3></div>
+                    </th>
+                </tr>
+                <tr ng-repeat="content in usersContentMap">
+                    <!-- <td class="text-center vert-align-middle">
+                         <image class="img-bordered" ng-src=resources/image/avatar_placeholder.png alt='You' image-resize image-size="50"/>
+                     </td>-->
+                    <td class="text-center vert-align-middle">
+                        <h4>
+                            <p>
+                                <mark>{{content.personalName}}</mark>
+                            </p>
+                            <!--  <small>{{content.username}}</small> -->
+                        </h4>
+                    </td>
+                    <td>
+                        <div ng-class="{{genPartElemLockShowId(content.userId, 1)}} ? 'glow-lock content-part-block ' : ''">
+                            <p class="content-part-lock" ng-show='{{genPartElemLockShowId(content.userId, 1)}}'>
+                                <img ng-src="resources/image/comment.gif">
+                                <strong>{{usersContentMap[content.userId].partsMap[1].senderName}}</strong>
+                            </p>
+                            <textarea msd-elastic retro-editable part="usersContentMap[content.userId].partsMap[1]"
+                                      ng-model="usersContentMap[content.userId].partsMap[1].text"
+                                      class="form-control txtarea-glow-edit" readonly="true" rows="3"
+                                      ng-disabled="{{genPartElemLockShowId(content.userId, 1)}}"></textarea>
+                        </div>
+                    </td>
+                    <td>
+                        <div ng-class="{{genPartElemLockShowId(content.userId, 2)}} ? 'glow-lock content-part-block' : ''">
+                            <p class="content-part-lock" ng-show='{{genPartElemLockShowId(content.userId, 2)}}'>
+                                <img ng-src="resources/image/comment.gif">
+                                <strong>{{usersContentMap[content.userId].partsMap[2].senderName}}</strong>
+                            </p>
+                            <textarea msd-elastic retro-editable part="usersContentMap[content.userId].partsMap[2]"
+                                      ng-model="usersContentMap[content.userId].partsMap[2].text"
+                                      class="form-control txtarea-glow-edit" readonly="true" rows="3"
+                                      ng-disabled="{{genPartElemLockShowId(content.userId, 2)}}"></textarea>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div ng-class="{{genPartElemLockShowId(content.userId, 3)}} ? 'glow-lock content-part-block' : ''">
+                            <p class="content-part-lock" ng-show='{{genPartElemLockShowId(content.userId, 3)}}'>
+                                <img ng-src="resources/image/comment.gif">
+                                <strong>{{usersContentMap[content.userId].partsMap[3].senderName}}</strong>
+                            </p>
+                            <textarea msd-elastic retro-editable part="usersContentMap[content.userId].partsMap[3]"
+                                      ng-model="usersContentMap[content.userId].partsMap[3].text" readonly="true"
+                                      class="form-control txtarea-glow-edit" rows="3"
+                                      ng-disabled="{{genPartElemLockShowId(content.userId, 3)}}"></textarea>
+
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center vert-align-middle">
+                        <h4>Action items</h4>
+                    </td>
+                    <td colspan="4">
+                        <div ng-class="actionItemsLock ? 'glow-lock content-part-block' : ''">
+                            <p class="content-part-lock" ng-show='actionItemsLock'>
+                                <img ng-src="resources/image/comment.gif">
+                                <strong>{{retroCont.actionItems.senderName}}</strong>
+                            </p>
+                            <textarea msd-elastic retro-editable part="retroCont.actionItems"
+                                      ng-model="retroCont.actionItems.text" class="form-control txtarea-glow-edit"
+                                      ng-disabled="actionItemsLock" rows="3" readonly="true"></textarea>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

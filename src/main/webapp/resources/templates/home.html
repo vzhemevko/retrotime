@@ -1,0 +1,129 @@
+<div class='container-fluid' ng-controller="homeController" ng-init="init()">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="centered">
+                <a class="navbar-brand" href="#/home">Retrotime</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="btn btn-default" ng-click='openUserMenu()'><span
+                                class="glyphicon glyphicon-align-justify"></span></a>
+                    </li>
+                    <li ng-show="isScrumMaster"><a class="btn btn-default" ng-click='openEditSMastersList()'>Scrum
+                        masters</a></li>
+                    <li ng-show="isScrumMaster"><a class="btn btn-default" ng-click='createRetro()'>Create new retro</a>
+                    </li>
+                    <li ng-show="isScrumMaster"><a class="btn btn-default" ng-click='createTeam()'>Create new team</a>
+                    </li>
+                    <li><a class="btn btn-default" ng-click='logout()'>Log out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row top-buffer50">
+        <div class="row left-buffer10 fade-in-out" ng-show="isShowNotification">
+            <div class="col-md-8">
+                <div ng-class="isShowError?'alert alert-dismissible alert-danger':'alert alert-dismissible alert-success'">
+                    <button type="button" ng-click="isShowNotification = false" class="close">×</button>
+                    <p>{{notifyText}}</p>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-md-1">
+            <div class="left-buffer30">
+
+            </div>
+        </div>-->
+
+        <div class="col-md-6 left-buffer30">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>Teams</h4>
+
+                    <div class="checkbox" ng-show="isScrumMaster">
+                        <label>
+                            <input type="checkbox"
+                                   ng-click="isTeamEdit = !isTeamEdit" ng-disabled="!teamIdOpened"/>
+                            Edit
+                        </label>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div ng-show="!teamsList.length">
+                        <image class="right-buffer10" ng-src=resources/image/info_icon.png alt='Info'/>
+                        <span class="text-muted h4">No team has been created yet.</span>
+                    </div>
+                    <div ng-repeat="team in teamsList">
+                        <div class="bottom-buffer5">
+                            <button
+                                    ng-click="manageRetroList(team.id, team.name)"
+                                    ng-class="team.id == teamIdOpened && isRetroOpened ? 'btn btn-sample active btn-block' : 'btn btn-sample btn-block'"
+                                    type="button"><h5>{{team.name}}</h5>
+                            </button>
+                        </div>
+                        <div class="inner-buffer5 slide-up-down"
+                             ng-show="team.id == teamIdOpened && isRetroOpened && isTeamEdit">
+                            <button type="button" class="btn btn-warning" ng-click="editTeam(team.id, team.name)">Edit
+                            </button>
+                            <button type="button" class="btn btn-danger" ng-click="deleteTeam(team.id, team.name)">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 retro-hide" ng-show="isRetroOpened">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>{{teamName}}'s retrospectives</h4>
+
+                    <div class="checkbox" ng-show="isScrumMaster">
+                        <label>
+                            <input type="checkbox" ng-click="isRetroEdit = !isRetroEdit"
+                                   ng-disabled="!retroList.length"/>
+                            Edit
+                        </label>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div ng-show="!retroList.length">
+                        <image class="right-buffer10" ng-src=resources/image/info_icon.png alt='Info'/>
+                        <span class="text-muted h4">No retrospective has been created yet.</span>
+                    </div>
+                    <div ng-repeat="retro in retroList">
+                        <div class="bottom-buffer5">
+                            <button type="button" ng-click="openRetro(retro.retroId)"
+                                    class="btn btn-info btn-block">
+                                <h5>{{retro.name}}</h5>
+                            </button>
+                        </div>
+                        <div class="inner-buffer5 slide-up-down" ng-show="isRetroEdit">
+                            <button type="button" class="btn btn-warning"
+                                    ng-click="updateRetro(retro.retroId, retro.name)">Edit
+                            </button>
+                            <button type="button" class="btn btn-danger"
+                                    ng-click="deleteRetro(retro.retroId, retro.name)">Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 		<div class="col-md-4" ng-hide="isRetroOpened">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><h4>Retrospectives</h4></div>
+                        <div class="panel-body">
+                            <div>
+                                <image class="right-buffer10" ng-src=resources/image/info_icon.png alt='Info'/>
+                                <span class="text-muted h4">Click on a team to open its list of retrospectives.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+    </div>
+</div>

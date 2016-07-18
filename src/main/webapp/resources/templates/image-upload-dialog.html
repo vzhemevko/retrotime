@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h3 class="modal-title">Change your profile image</h3>
+</div>
+<div class="modal-body">
+
+    <div ng-show="isShowNotification">
+        <div class="alert alert-dismissible alert-danger fade-in-out" ng-show="isShowNotification">
+            <button type="button" ng-click="isShowNotification = false" class="close">×</button>
+            <p>{{notifyText}}</p>
+        </div>
+    </div>
+
+    <div>
+        <input id="file" type="file" name="file" ng-model="fileInp" ng-file-select="ngFileSelect($files)"/>
+        <br>
+        <!-- <button ng-click="add($event)">Add</button>-->
+        <p>{{data}}</p>
+        <b>Preview:</b><br/>
+        <i ng-hide="imageSrc">No image choosed</i>
+        <img ng-src="{{imageSrc}}" image-resize image-size="150"/><br/>
+    </div>
+
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok(output)">OK</button>
+    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+</div>

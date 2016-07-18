@@ -1,0 +1,256 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+/***Start login form styles***/
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .additional {
+  margin-bottom: 10px;
+}
+.form-signin .additional {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/***End login form styles***/
+
+.inner-buffer15 {
+  padding: 15px
+}
+
+.inner-buffer5 {
+    padding: 5px;
+}
+
+.inner-sides-buffer30 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.left-buffer30 {
+    margin-left: 30px
+}
+
+.left-buffer20 {
+    margin-left: 20px
+}
+
+.left-buffer10 {
+    margin-left: 10px
+}
+
+.remove-left-buffer50 {
+    margin-left: -50px
+}
+
+.right-buffer10 {
+    margin-right:10px;
+}
+
+.top-buffer50 {
+  margin-top:50px;
+}
+
+.top-buffer30 {
+  margin-top:30px;
+}
+
+.top-buffer10 {
+    margin-top:10px;
+}
+
+.bottom-buffer5 {
+    margin-bottom: 5px;
+}
+
+.bottom-buffer10 {
+    margin-bottom: 10px;
+}
+
+.bottom-buffer20 {
+    margin-bottom: 20px;
+}
+
+.bottom-buffer30 {
+   margin-bottom:30px;
+ }
+
+.bottom-buffer50 {
+  margin-bottom:30px;
+}
+
+.bottom-buffer100 {
+  margin-bottom:100px;
+}
+
+.centered {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+}
+
+.img-bordered {
+    border: 2px solid gray;
+}
+
+
+.btn-sample {
+  color: #ffffff;
+  background-color: #486F9C;
+  border-color: #130269;
+}
+.btn-sample:hover {
+   color: #ffffff;
+   background-color: #244770;
+  /* border-color: #130269;*/
+}
+.btn-sample:active,
+.btn-sample.active,
+.open .dropdown-toggle.btn-sample {
+  color: #ffffff;
+  background-color: #2aabdf;
+  border-color: white;
+  outline: 0;
+/* -webkit-box-shadow: inset 0 1px 1px rgba(100,100,100,.6),0 0 8px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(100,100,100,.6),0 0 8px rgba(0,0,0,.075);*/
+}
+
+.fade-in-out {
+  transition: 1s linear all;
+  opacity: 1;
+}
+
+.fade-in-out.ng-hide {
+  opacity: 0;
+}
+
+.slide-up-down {
+ -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+    -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+    -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  line-height:20px;
+  opacity:1;
+  background:white;
+}
+
+.slide-up-down.ng-hide {
+  line-height:0;
+  opacity:0;
+  padding:0 10px;
+}
+
+.inline { display: inline; }
+
+.table tbody>tr>td.vert-align-middle{
+    vertical-align: middle;
+}
+
+.txtarea-glow-edit:focus {   
+  border-color: rgba(41, 171, 224, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) 
+  inset, 0 0 8px rgba(41, 171, 224, 0.6);
+  outline: 0 none;
+}
+
+.glow-lock {   
+  border-color: rgba(255, 153, 153, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) 
+  inset, 0 0 8px rgba(255, 153, 153, 0.6);
+  outline: 0 none;
+  min-width: 100%;
+}
+
+.glow-edit:focus {
+    border-color: rgba(41, 171, 224, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075)
+    inset, 0 0 8px rgba(41, 171, 224, 0.6);
+    outline: 0 none;
+}
+
+.content-part-lock {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+
+.content-part-block {
+  position: relative; 
+  display: inline-block;
+}
+
+
+.retro-hide {
+ -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+    -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+    -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  line-height:20px;
+  opacity:100;
+  padding:10px;
+  position: relative;
+  left: 0;
+}
+
+.retro-hide.ng-hide {
+  left: -20%;
+  opacity:0;
+  padding:0 10px;
+}
+
+span.glyphicon {
+    font-size: 24px;
+}
+
+.space {
+    word-spacing: 30px;
+}
+
+.user-edit-slide {
+    transition: all linear 0.05s;
+    line-height: 20px;
+    opacity: 1;
+    padding: 10px;
+    background: white;
+}
+
+.user-edit-slide.ng-hide {
+    line-height: 0;
+    opacity: 0;
+    padding: 0 10px;
+}

@@ -1,0 +1,74 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+ repositories {
+	mavenCentral()
+ }
+
+ project.ext {
+	springVersion = "4.0.6.RELEASE"
+	springSecurityVers = "4.0.2.RELEASE"
+	springSecOauthVers = "2.0.7.RELEASE" 
+	springWebSocketVers = "4.2.1.RELEASE" 
+	springDataJPAVers = "1.9.0.RELEASE"
+	
+    hibernateVersion = "4.3.10.Final"
+    postgresqlVersion = "9.4-1201-jdbc41"
+    jacksonVersion = "2.5.4"
+    servletVersion = "3.0.1"
+	log4jVersion = "1.2.17"
+    junitVersion = "4.12"
+} 
+
+dependencies {
+
+	//-- Servlet API -- include in compile only, exclude in the war
+	providedCompile "javax.servlet:javax.servlet-api:$servletVersion"
+	providedCompile 'javax.websocket:javax.websocket-api:1.1'
+
+	//---- Persistent ------------
+	compile "org.postgresql:postgresql:$postgresqlVersion"
+	compile "org.hibernate:hibernate-core:$hibernateVersion"
+	compile "org.hibernate:hibernate-entitymanager:$hibernateVersion"
+	
+
+	//---- Spring ----------------
+	compile "org.springframework:spring-core:$springVersion"
+	compile "org.springframework:spring-webmvc:$springVersion"
+	compile "org.springframework:spring-orm:$springVersion"
+	compile "org.springframework:spring-jdbc:$springVersion"
+
+	compile "org.springframework.security:spring-security-web:$springSecurityVers"
+	compile "org.springframework.security:spring-security-core:$springSecurityVers"
+	compile "org.springframework.security:spring-security-config:$springSecurityVers"
+	compile "org.springframework.security.oauth:spring-security-oauth2:$springSecOauthVers"
+		
+	compile "org.springframework.data:spring-data-jpa:$springDataJPAVers"
+	compile "org.springframework:spring-websocket:$springWebSocketVers"
+	//---- End of Spring ---------
+
+	//---- Jakson & JSON ---------
+	compile "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+	compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+	compile "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
+	
+	//---- Log4j------------
+	compile "log4j:log4j:$log4jVersion"
+
+	//--- Tests -----------
+	compile "org.springframework:spring-test:$springVersion"
+	compile "junit:junit:$junitVersion"
+}
+
+
+task deploy(type: Copy) {
+	from war
+	def dest = System.getenv("TOMCAT_HOME_RETRO") + "/webapps"
+    into dest
+}
+
+task deployFront(type: Copy) {
+    from 'src/main/webapp/resources'
+    def dest = System.getenv("TOMCAT_HOME_RETRO") + "/webapps/retrotime/resources"
+    into dest
+}

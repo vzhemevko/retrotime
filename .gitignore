@@ -1,0 +1,20 @@
+# Ignore everything
+/*
+
+# ===== Except source and config files ======
+!.gitignore
+
+# java source files
+!/src
+
+# gradle wrapper 
+!/gradle
+!gradlew
+!gradlew.bat
+
+# gradle conf
+!build.gradle
+!settings.gradle
+
+# maven conf (obsolete shoud be delete shortly)
+!pom.xml
