@@ -4,8 +4,7 @@
 'use strict'
 
 retroApp.directive('userEdit', function ($parse, $timeout) {
-
-
+	
     return {
         restrict: 'A',
         link: function ($scope, element, attrs) {
@@ -24,6 +23,5 @@ retroApp.directive('userEdit', function ($parse, $timeout) {
 
             })
         }
-
     }
 })

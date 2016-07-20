@@ -1,7 +1,6 @@
 /**
  * Created by vzhemevko on 02.10.15.
  */
-
 'use strict'
 
 retroApp.directive('retroEditable', function ($parse, $timeout) {
@@ -33,6 +32,5 @@ retroApp.directive('retroEditable', function ($parse, $timeout) {
 
             })
         }
-
     }
 })

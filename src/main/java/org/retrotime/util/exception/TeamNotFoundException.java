@@ -1,11 +1,9 @@
 package org.retrotime.util.exception;
 
 public class TeamNotFoundException extends RuntimeException {
-
-
+	
     public TeamNotFoundException(int teamId) {
         super("Content with id : " + teamId + " was not found.");
-
     }
 
     public TeamNotFoundException(String msg) {

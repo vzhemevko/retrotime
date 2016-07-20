@@ -1,9 +1,4 @@
 /**
- * Created by vzhemevko on 04.10.15.
- */
-'use strict'
-
-/**
  * Created by vzhemevko on 05.09.15.
  */
 'use strict';

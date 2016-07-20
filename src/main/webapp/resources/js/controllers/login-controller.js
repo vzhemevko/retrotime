@@ -1,3 +1,6 @@
+/**
+ * Created by vzhemevko on 31.09.15.
+ */
 'use strict';
 
 retroApp.controller('loginController',

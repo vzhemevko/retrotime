@@ -17,7 +17,6 @@ retroApp.controller('profileImgUploadCtr', function ($scope, $modalInstance, inp
         /* reader.readAsBinaryBuffer(file);*/
     }
 
-
     $scope.ok = function () {
     }
 

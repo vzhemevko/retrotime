@@ -129,5 +129,4 @@ retroApp.factory('cookieService', ['$cookieStore', 'commonService',
             clearCookies: clearCookies
         };
     }
-
 ]);

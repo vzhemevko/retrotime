@@ -63,12 +63,12 @@ dependencies {
 
 task deploy(type: Copy) {
 	from war
-	def dest = System.getenv("TOMCAT_HOME_RETRO") + "/webapps"
+	def dest = System.getenv("TOMCAT_HOME") + "/webapps"
     into dest
 }
 
 task deployFront(type: Copy) {
     from 'src/main/webapp/resources'
-    def dest = System.getenv("TOMCAT_HOME_RETRO") + "/webapps/retrotime/resources"
+    def dest = System.getenv("TOMCAT_HOME") + "/webapps/retrotime/resources"
     into dest
 }

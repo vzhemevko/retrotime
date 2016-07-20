@@ -45,7 +45,7 @@ retroApp.factory('webSocketService', ['$q', '$rootScope', '$location', '$log', '
 
             try {
                 if ($rootScope.openedRetroId && !isConnected()) {
-                    // TODO chane hardcoded app name
+                    // TODO change hardcoded app name
                     var connectionURL = protocol + host + ":" + port + "/retrotime/sock/" + $rootScope.openedRetroId;
                     $log.info("WebSocket: Connecting to : " + connectionURL);
                     ws = new WebSocket(connectionURL);

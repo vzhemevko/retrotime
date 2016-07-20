@@ -1,3 +1,6 @@
+/**
+ * Created by vzhemevko on 31.09.15.
+ */
 'use strict';
 
 var retroApp = angular.module('retroApp', ['ngRoute', 'ngCookies', 'ui.bootstrap', 'ngTagsInput', 'ngResource', 

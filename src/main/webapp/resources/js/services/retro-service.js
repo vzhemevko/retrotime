@@ -1,6 +1,7 @@
 /**
  * Created by vzhemevko on 03.09.15.
  */
+'use strict';
 
 retroApp.factory('retroService', ['$http', '$log', '$rootScope', '$timeout', '$location', 'cookieService',
     'webSocketService', 'notifyService',
