@@ -7,6 +7,9 @@
 # java source files
 !/src
 
+# demo folder
+!/demo
+
 # gradle wrapper 
 !/gradle
 !gradlew
