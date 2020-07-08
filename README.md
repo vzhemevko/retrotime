@@ -9,7 +9,7 @@ see [Wikipedia](https://en.wikipedia.org/wiki/Scrum_(software_development)
 > A few more words about technical details. Besides above-mentioned technologies, in the project was used Bootstrap 3, Gradle, PostgreSQL, Spring Security and it leverages WebSocket technology for instant messaging (see below). I believe this project may serve as a good example what can be built using this technology stack.
 
 <p align="center">
-  <img src="https://s-media-cache-ak0.pinimg.com/564x/1a/b2/94/1ab2943bf19068cf6f708e6349551c28.jpg"/>
+  <img src="https://github.com/vzhemevko/retrotime/blob/master/demo/technologies.jpg?raw=true"/>
 </p>
 
 ## usage
@@ -24,11 +24,11 @@ see [Wikipedia](https://en.wikipedia.org/wiki/Scrum_(software_development)
 >Scrum master signs in and creates a new scrum team and a new retrospective.
 
 <p align="center">
-  <img src="https://s-media-cache-ak0.pinimg.com/originals/6c/2f/e4/6c2fe45b5846e0471fb7e716bb738158.gif"/>
+  <img src="https://github.com/vzhemevko/retrotime/blob/master/demo/scrum-master-signs-in.gif?raw=true"/>
 </p>
 
 >Two team members sign in and exchange their thoughts about past sprint.
 
 <p align="center">
-  <img src="https://s-media-cache-ak0.pinimg.com/originals/6b/7a/45/6b7a45b534a0d621b6f2747f5602647e.gif"/>
+  <img src="https://github.com/vzhemevko/retrotime/blob/master/demo/team-members-sign-in.gif?raw=true"/>
 </p>
